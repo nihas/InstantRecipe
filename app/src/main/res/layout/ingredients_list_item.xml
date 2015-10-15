@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp">
+
+
+
+        <!--<View-->
+            <!--android:id="@+id/bgColor"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="#808080"/>-->
+
+        <ImageView
+            android:id="@+id/maskImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mask"
+            android:background="#808080"/>
+
+        <TextView
+            android:id="@+id/titleLetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ingredientTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Banana"
+
+        android:layout_marginLeft="20dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

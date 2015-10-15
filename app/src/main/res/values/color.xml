@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#f05d4a</color>
+    <color name="primary_dark">#ed432d</color>
+
+    <color name="ToolBarColorDark">#1b2533</color>
+    <color name="list_highlight">#ff9600</color>
+    <color name="blue">#459cc0</color>
+    <color name="border">#979797</color>
+    <color name="ash">#cdcdcd</color>
+    <color name="light_grey">#dcdcdc</color>
+    <color name="dark_grey">#808080</color>
+    <color name="transparent">#00ffffff</color>
+
+    <color name="color1">#3f51b4</color>
+    <color name="color2">#962aab</color>
+    <color name="color3">#fb90d0</color>
+    <color name="color4">#e81d61</color>
+    <color name="color5">#679e38</color>
+    <color name="color6">#4582f4</color>
+    <color name="color7">#808080</color>
+    <color name="color8">#e96d02</color>
+
+</resources>
