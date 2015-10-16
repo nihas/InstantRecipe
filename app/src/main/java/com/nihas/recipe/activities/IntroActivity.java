@@ -47,7 +47,7 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()){
             case R.id.login:
             case R.id.signup:
-                Intent nextIntent=new Intent(IntroActivity.this,SelectIngredientsActivity.class);
+                Intent nextIntent=new Intent(IntroActivity.this,CuisinesActivity.class);
                 startActivity(nextIntent);
                 finish();
                 break;
