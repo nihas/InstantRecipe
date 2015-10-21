@@ -10,9 +10,7 @@ import android.widget.TextView;
 
 import com.nihas.recipe.R;
 import com.nihas.recipe.activities.SelectIngredientsActivity;
-import com.nihas.recipe.customui.RecyclingImageView;
 import com.nihas.recipe.pojos.AllPojo;
-import com.nihas.recipe.util.ImageFetcher;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +21,7 @@ import java.util.List;
 public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.ViewHolder> {
 
     private List<String> mDataset;
-    private ImageFetcher mImageFetcher;
+//    private ImageFetcher mImageFetcher;
     Activity activity;
     private static int colorCode=0;
     static int[] colorArray={R.color.color1,R.color.color2, R.color.color3,R.color.color4,
@@ -32,7 +30,7 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
     public IngredientsAdapter(Activity activity, ArrayList<String> ingredients) {
         mDataset = ingredients;
         this.activity=activity;
-        this.mImageFetcher=mImageFetcher;
+//        this.mImageFetcher=mImageFetcher;
 
     }
 

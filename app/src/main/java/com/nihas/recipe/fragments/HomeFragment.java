@@ -19,8 +19,6 @@ import com.nihas.recipe.extra.Keys;
 import com.nihas.recipe.pojos.AllPojo;
 import com.nihas.recipe.recipeapi.WebRequest;
 import com.nihas.recipe.recipeapi.WebServices;
-import com.nihas.recipe.util.ImageCache;
-import com.nihas.recipe.util.ImageFetcher;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,21 +39,21 @@ public class HomeFragment extends Fragment implements Keys.RecipeAllKey{
     ProgressBar progressBar;
     private int mImageThumbSize=100;
     private int mImageThumbSpacing=1;
-    private ImageFetcher mImageFetcher;
+//    private ImageFetcher mImageFetcher;
     private static final String IMAGE_CACHE_DIR = "thumbs";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ImageCache.ImageCacheParams cacheParams =
-                new ImageCache.ImageCacheParams(getActivity(), IMAGE_CACHE_DIR);
-
-        cacheParams.setMemCacheSizePercent(0.25f); // Set memory cache to 25% of app memory
-
-        // The ImageFetcher takes care of loading images into our ImageView children asynchronously
-        mImageFetcher = new ImageFetcher(getActivity(), mImageThumbSize);
-        mImageFetcher.setLoadingImage(R.drawable.empty_photo);
-        mImageFetcher.addImageCache(getActivity().getSupportFragmentManager(), cacheParams);
+//        ImageCache.ImageCacheParams cacheParams =
+//                new ImageCache.ImageCacheParams(getActivity(), IMAGE_CACHE_DIR);
+//
+//        cacheParams.setMemCacheSizePercent(0.25f); // Set memory cache to 25% of app memory
+//
+//        // The ImageFetcher takes care of loading images into our ImageView children asynchronously
+//        mImageFetcher = new ImageFetcher(getActivity(), mImageThumbSize);
+//        mImageFetcher.setLoadingImage(R.drawable.empty_photo);
+//        mImageFetcher.addImageCache(getActivity().getSupportFragmentManager(), cacheParams);
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -146,7 +144,7 @@ public class HomeFragment extends Fragment implements Keys.RecipeAllKey{
                 }
 
                 // specify an adapter (see also next example)
-                mAdapter = new MyAdapter(getActivity(),homeItems,mImageFetcher);
+                mAdapter = new MyAdapter(getActivity(),homeItems);
                 mRecyclerView.setAdapter(mAdapter);
 //                mRecyclerList.addOnScrollListener(new EndlessRecyclerOnScrollListener(layoutManager) {
 //                    @Override
@@ -187,26 +185,6 @@ public class HomeFragment extends Fragment implements Keys.RecipeAllKey{
     }
 
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        mImageFetcher.setExitTasksEarly(false);
-//        mAdapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        mImageFetcher.setPauseWork(false);
-        mImageFetcher.setExitTasksEarly(true);
-        mImageFetcher.flushCache();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mImageFetcher.closeCache();
-    }
 
 
 }

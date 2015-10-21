@@ -5,12 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nihas.recipe.R;
-import com.nihas.recipe.customui.RecyclingImageView;
 import com.nihas.recipe.pojos.AllPojo;
-import com.nihas.recipe.util.ImageFetcher;
 
 import java.util.List;
 
@@ -19,7 +18,7 @@ import java.util.List;
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<AllPojo> mDataset;
-    private ImageFetcher mImageFetcher;
+//    private ImageFetcher mImageFetcher;
     Activity activity;
 
 
@@ -30,11 +29,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView mTextView;
-        RecyclingImageView mRimageView;
+        ImageView mRimageView;
         public ViewHolder(View v) {
             super(v);
             mTextView=(TextView)v.findViewById(R.id.info_text);
-            mRimageView=(RecyclingImageView)v.findViewById(R.id.list_image);
+            mRimageView=(ImageView)v.findViewById(R.id.list_image);
 //            mTextView = v;
         }
     }
@@ -42,10 +41,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(Activity activity, List<AllPojo> myDataset, ImageFetcher mImageFetcher) {
+    public MyAdapter(Activity activity, List<AllPojo> myDataset) {
         mDataset = myDataset;
         this.activity=activity;
-        this.mImageFetcher=mImageFetcher;
+//        this.mImageFetcher=mImageFetcher;
 
 
 
@@ -73,8 +72,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.mTextView.setText(mDataset.get(position).getTitle());
-        mImageFetcher.loadImage(mDataset.get(position).getUrl(), holder.mRimageView);
-
+//        mImageFetcher.loadImage(mDataset.get(position).getUrl(), holder.mRimageView);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
