@@ -25,6 +25,7 @@
         <activity android:name=".activities.IntroActivity"/>
         <activity android:name=".activities.SelectIngredientsActivity"/>
         <activity android:name=".activities.CuisinesActivity"/>
+        <activity android:name=".activities.ProfileActivity"/>
     </application>
 
 </manifest>
